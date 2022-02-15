@@ -1,0 +1,38 @@
+/** @format */
+.wrapper {
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h4 {
+    position: absolute;
+    opacity: 0;
+    color: #cecccc;
+    font-weight: 500;
+  }
+  .img {
+    width: calc(100% / 3) !important;
+    position: relative;
+    opacity: 1;
+  }
+  &:hover {
+    background-color: transparent;
+    h4 {
+      opacity: 1;
+      transition: all 0.5s ease-in-out;
+      color: #cecccc;
+    }
+    .img {
+      opacity: 0.5;
+      transition: all 0.5s ease-in-out;
+      cursor: pointer;
+    }
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}

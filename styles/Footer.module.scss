@@ -1,0 +1,41 @@
+/** @format */
+
+.container {
+  background: #0f110c;
+  padding: 2rem 10rem 0;
+  margin: 6rem 0 0 0;
+  color: #cecccc;
+  .divide {
+    margin: 0 auto;
+    padding: 5% 0 0 !important;
+    display: flex;
+
+    div {
+      width: 50%;
+      display: inline-block;
+      &:first-child {
+        margin-right: 50px;
+      }
+    }
+  }
+  h3 {
+    font-weight: 500;
+  }
+  h1 {
+    color: #a97590;
+  }
+  ul {
+    list-style: none;
+    h4 {
+      font-weight: 500;
+    }
+  }
+  .line {
+    display: flex;
+    flex: 1 1;
+    padding: 2rem 0;
+    margin: 6rem 0 0 0;
+    color: #cecccc;
+    border-top: 1px solid #cecccc;
+  }
+}

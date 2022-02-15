@@ -1,0 +1,28 @@
+/** @format */
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+
+.logo {
+  max-width: 10% !important;
+}
+
+.ul {
+  margin: 0;
+  list-style: none;
+  flex-direction: row;
+  text-align: end;
+  display: flex;
+  align-items: center;
+  li h4 {
+    margin: 0 10px;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    &:hover {
+      color: #a97590;
+    }
+  }
+}

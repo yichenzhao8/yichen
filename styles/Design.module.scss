@@ -1,0 +1,21 @@
+/** @format */
+
+.gallery {
+  -webkit-column-count: 3;
+  -webkit-column-gap: 5px;
+  -moz-column-count: 3;
+  -moz-column-gap: 5px;
+  column-count: 3;
+  column-gap: 5px;
+
+  img {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 3px !important;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}
