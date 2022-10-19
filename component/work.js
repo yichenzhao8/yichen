@@ -12,10 +12,8 @@ import wasinCover from "../public/wasin.jpg";
 
 export default function Work() {
   return (
-    <div style={{ padding: "4rem 0" }}>
-      <h1 style={{ padding: "1rem 0" }} id="work">
-        Work
-      </h1>
+    <div className={styles.section}>
+      <h1 id="work">Work</h1>
 
       <div className={styles.container}>
         <Link href="/work/DeepWave-Business-Website">

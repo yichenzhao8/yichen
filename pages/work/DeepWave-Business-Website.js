@@ -1,26 +1,30 @@
 /** @format */
 import Navbar from "../../component/navbar";
-import Link from "../../component/link";
+
 import styles from "../../styles/WorkItem.module.scss";
 import Image from "next/image";
 import cover from "../../public/DBW/cover.jpg";
 import page1 from "../../public/DBW/1.png";
 import page2 from "../../public/DBW/2.png";
-import Footer from "../../component/workfooter";
+import Footer from "../../component/footer";
 
 export default function DBW() {
   return (
     <>
       <div className="container">
-        <Navbar text="#0F110C" />
+        <Navbar text="#0F110C" position="relative" />
         <div className={styles.wrapper}>
           <h1>DeepWave Business Website</h1>
-          <Image src={cover} alt="DeepWave Business Website Cover" />
-          <p>
+          <Image
+            src={cover}
+            alt="DeepWave Business Website Cover"
+            layout="responsive"
+          />
+          <p className={styles.intro}>
             DeepWave dedicates to acoustic-related artificial intelligence
-            research and development, and has applied solutions in music
-            entertainment. To clearly describe solutions and sell services to
-            potential clients, DeepWave decided to build a company website.
+            research and has applied solutions in music entertainment. To
+            attract new customers and grow its business, DeepWave decided to
+            build a company website.
           </p>
           <div className={styles.divide}>
             <div>
@@ -30,9 +34,8 @@ export default function DBW() {
             </div>
             <div>
               <p>
-                I was responsible for designing and building the website,
-                working closely with Project Manager to communicate the
-                technical features and goals of the project.
+                I was responsible for designing and building the website to
+                present the technical features of DeepWave.
               </p>
             </div>
           </div>
@@ -40,22 +43,32 @@ export default function DBW() {
             <div>
               <h3>Implementation</h3>
               <br />
-              <span> Design and Building static website</span>
+              <span> Designed and Built the static website</span>
             </div>
             <div>
               <p>
-                I designed the user interface with Sketch and then built the
-                website with React because of its reusability and
-                maintainability, including Home page, About page, Tech page,
-                Career page, News page, FAQ page, Terms and Condition page and
-                Privacy Policy page.
+                Design
+                <ul>
+                  <li>
+                    Designed all the UI of the business websites with Sketch,
+                    including Home page, About page, Tech page, Media page,
+                    Career page, News page, FAQ page, Terms and Condition page
+                    and Privacy Policy page.
+                  </li>
+                </ul>
+                Function
+                <p>
+                  The website was built with React because of its reusability
+                  and maintainability.
+                </p>
               </p>
             </div>
           </div>
           <Image src={page1} alt="page1" />
+          <div className={styles.alt}>Home page</div>
 
           <Image src={page2} alt="page2" />
-          <Link link="https://dwave.cc" />
+          <div className={styles.alt}>Tech page, Media page, Career page</div>
         </div>
       </div>
       <Footer />

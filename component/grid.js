@@ -4,9 +4,12 @@ import styles from "../styles/Work.module.scss";
 
 export default function Grid(props) {
   return (
-    <div className={styles.wrapper}>
-      <Image src={props.img} className={styles.img} priority={true} />
-      <h4>{props.title}</h4>
-    </div>
+    <>
+      <div className={styles.wrapper}>
+        <div className={styles.overlay}></div>
+        <Image src={props.img} className={styles.img} priority={true} />
+        <h4>{props.title}</h4>
+      </div>
+    </>
   );
 }

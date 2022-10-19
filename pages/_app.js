@@ -1,6 +1,5 @@
 /** @format */
 import React, { useState, useEffect } from "react";
-import Loading from "../component/loading";
 import "../styles/globals.css";
 import "../styles/nprogress.css";
 import { useRouter } from "next/router";
@@ -8,16 +7,13 @@ import NProgress from "nprogress";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const handleStart = (url) => {
       NProgress.start();
-      setLoading(true);
     };
     const handleStop = () => {
       NProgress.done();
-      setLoading(false);
     };
 
     router.events.on("routeChangeStart", handleStart);
@@ -32,7 +28,6 @@ function MyApp({ Component, pageProps }) {
   });
   return (
     <>
-      <Loading loading={loading} />
       <Component {...pageProps} />
     </>
   );

@@ -1,6 +1,6 @@
 /** @format */
 import Navbar from "../../component/navbar";
-import Link from "../../component/link";
+
 import styles from "../../styles/WorkItem.module.scss";
 import Image from "next/image";
 import cover from "../../public/Sovia/cover.jpg";
@@ -8,20 +8,20 @@ import page1 from "../../public/Sovia/1.png";
 import font from "../../public/Sovia/font.png";
 import logo from "../../public/Sovia/logo.png";
 import logo1 from "../../public/Sovia/logo1.jpg";
-import Footer from "../../component/workfooter";
+import Footer from "../../component/footer";
 
 export default function Sovia() {
   return (
     <>
       <div className="container">
-        <Navbar text="#0F110C" />
+        <Navbar text="#0F110C" position="relative" />
         <div className={styles.wrapper}>
           <h1>Sovia</h1>
           <Image src={cover} alt="Sovia Cover" />
-          <p>
+          <p className={styles.intro}>
             Sovia is a singing voice separation system. It separates voice and
-            background music from the given youtube link or audio file. It aims
-            to provide unprecedented singing/listening experience.
+            background music from a given youtube link or a audio file. It aims
+            to provide unprecedented singing and listening experience.
           </p>
           <div className={styles.divide}>
             <div>
@@ -32,7 +32,7 @@ export default function Sovia() {
             <div>
               <p>
                 In this project, I worked closely with Backend developer to
-                integrate APIs, bring AI solutions to the web page. I aimed to
+                integrate APIs, bring AI solutions to the website. I aimed to
                 creating a user interface as simple and efficient as possible
                 for all age groups.
               </p>
@@ -43,30 +43,36 @@ export default function Sovia() {
             <div>
               <h3>Implementation</h3>
               <br />
-              <span>Optimize UI design, build React website</span>
+              <span>
+                Optimized the website&apos;s UI and built React website
+              </span>
             </div>
             <div>
               <p>
                 Design
                 <ul>
-                  <li>Optimize UIUX to make it </li>
-                  <li>Customize exclusive logo</li>
+                  <li>
+                    Optimized website&apos;s UI and UX for a better user
+                    experience.
+                  </li>
+                  <li>Customized exclusive logo.</li>
                 </ul>
                 Function
                 <ul>
                   <li>
-                    Redesign and revise online module to generate better audio
-                    waveform
-                  </li>
-                  <li>Get latest account balance when page reload</li>
-                  <li>
-                    Go over uploaded audio&prime;s format and size before
-                    sending it to backend
+                    Redesigned and revised the waveform open-source software to
+                    generate a more suitable waveform to the service.
                   </li>
                   <li>
-                    Store analyzed audios in playlist by using localstorage
+                    Returned the latest account balance everytime the page
+                    reloads.
                   </li>
-                  <li>Add upload limit permission to non-login user</li>
+                  <li>
+                    Checked the uploaded audio&apos;s format and size before
+                    sending to the backend.
+                  </li>
+                  <li>Stored and retrieved the audio by using localstorage</li>
+                  <li>Added permission to non-login users</li>
                 </ul>
               </p>
             </div>
@@ -94,11 +100,9 @@ export default function Sovia() {
               <Image src={logo1} alt="logo1" />
             </div>
           </div>
-          <video controls loop width="100%">
+          <video controls loop>
             <source src="/Sovia/video.webm" type="video/webm" />
           </video>
-
-          <Link link="https://sovia.dwave.cc" />
         </div>
       </div>
       <Footer />

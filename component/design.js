@@ -4,7 +4,6 @@ import styles from "../styles/Design.module.scss";
 import g1 from "../public/Design/g1.jpg";
 import g2 from "../public/Design/g2.jpg";
 import g3 from "../public/Design/g3.jpg";
-import g4 from "../public/Design/g4.jpg";
 import g5 from "../public/Design/g5.jpg";
 import g6 from "../public/Design/g6.jpg";
 import g7 from "../public/Design/g7.jpg";
@@ -22,7 +21,6 @@ export default function Work() {
         <Designgrid img={g1} />
         <Designgrid img={g2} />
         <Designgrid img={g3} />
-        <Designgrid img={g4} />
         <Designgrid img={g5} />
         <Designgrid img={g9} />
         <Designgrid img={g7} />
