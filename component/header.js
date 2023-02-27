@@ -13,13 +13,14 @@ export default function header() {
           <h1 className={styles.title}>YiChen Zhao</h1>
 
           <h3>
-            I&prime;m a
+            I&prime;m a skilled
             <span className={styles.highligh}> frontend developer </span>
             and
             <span className={styles.highligh}> UI/Graphic designer </span>
-            based in Seattle.
-            <br />I am passionate about building excellent services with great
-            UI.
+            with a passion
+            <br />
+            for delivering exceptional services that prioritize user experience
+            and aesthetics.
           </h3>
         </div>
         <div className={styles.wrapper}>
