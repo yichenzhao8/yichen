@@ -7,9 +7,15 @@ export default function Grid(props) {
     <>
       <div className={styles.wrapper}>
         <div className={styles.overlay}></div>
-        <Image src={props.img} className={styles.img} priority={true} />
-        <h4>{props.title}</h4>
+        <Image
+          src={props.img}
+          className={`${styles.img}`}
+          priority={true}
+          alt={props.title}
+        />
       </div>
+
+      <h4 className={styles.title}>{props.title}</h4>
     </>
   );
 }

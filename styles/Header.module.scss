@@ -1,12 +1,12 @@
 /** @format */
 
 .main {
-  background-color: #000;
+  background-color: #1e1e1e;
   flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  color: #f2f3f7;
+  color: #f2efe6;
   align-items: center;
   padding: 4rem 10rem;
   height: 100vh;
@@ -14,30 +14,38 @@
 
   .section {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
     width: 100%;
+    justify-content: space-between;
     .text {
       display: flex;
       justify-content: center;
       flex-direction: column;
-      order: 1;
+      top: 70%;
+      z-index: 99;
+      width: 55%;
+
+      span {
+        line-height: 3.5rem;
+        font-size: 2.5rem;
+        font-weight: 300;
+      }
     }
   }
 
   .wrapper {
     display: flex;
     position: relative;
-    background-color: #a97590;
     height: fit-content;
-    width: 400px;
-    background: #a97590;
-    order: 2;
+    background: #f2efe6;
     border-radius: 10px;
-
     .img {
       position: relative;
-      width: 300px;
+      width: auto;
+      height: auto;
       mix-blend-mode: multiply;
+      border-radius: 10px;
     }
   }
 }
@@ -54,22 +62,69 @@
   color: #d8b0c9;
 }
 
+@media (min-width: 992px) and (max-width: 1200px) {
+  .main {
+    .section {
+      .text {
+        span {
+          padding: 0 20px 0 0;
+          font-size: 1.77778rem;
+        }
+      }
+    }
+    .wrapper {
+      .img {
+        width: 300px;
+      }
+    }
+  }
+}
+
 @media (max-width: 992px) {
   .main {
-    padding: 0 4rem !important;
-    text-align: center !important;
+    padding: 4rem 4rem 0;
+    text-align: center;
     .section {
       flex-direction: column;
       align-items: center;
       .text {
         order: 2;
         padding-top: 2rem;
+        width: 100%;
+
+        span {
+          font-size: 1.77778rem;
+          font-weight: 500;
+          line-height: 2.333rem;
+        }
       }
     }
 
     .wrapper {
       order: 1;
-      width: 200px;
+      .img {
+        width: 300px;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 6rem 4rem 0;
+    .section {
+      .text {
+        span {
+          font-size: 1.4rem;
+        }
+      }
+    }
+    .wrapper {
+      .img {
+        width: 250px;
+        height: auto;
+      }
     }
   }
 }

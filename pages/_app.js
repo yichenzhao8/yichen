@@ -1,9 +1,14 @@
 /** @format */
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "../styles/globals.css";
 import "../styles/nprogress.css";
+import Head from "../component/head";
+
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
+
+import CursorContextProvider from "../component/cursor/CursorContextProvider";
+import { Cursor } from "../component/cursor/Cursor";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -27,9 +32,11 @@ function MyApp({ Component, pageProps }) {
     };
   });
   return (
-    <>
+    <CursorContextProvider>
+      <Cursor />
+      <Head />
       <Component {...pageProps} />
-    </>
+    </CursorContextProvider>
   );
 }
 

@@ -1,76 +1,71 @@
 /** @format */
 import Navbar from "../../component/navbar";
+import GoHome from "../../component/goHome";
+import Footer from "../../component/footer";
 
 import styles from "../../styles/WorkItem.module.scss";
 import Image from "next/image";
 import cover from "../../public/DBW/cover.jpg";
-import page1 from "../../public/DBW/1.png";
-import page2 from "../../public/DBW/2.png";
-import Footer from "../../component/footer";
+import showcase from "../../public/DBW/showcase.jpg";
 
 export default function DBW() {
   return (
     <>
       <div className="container">
-        <Navbar text="#0F110C" position="relative" />
+        <Navbar text="#1e1e1e" position="relative" />
+        <h1 className={styles.h1}>DeepWave Business Website</h1>
+        <Image
+          src={cover}
+          alt="DeepWave Business Website Cover"
+          className={styles.fullimg}
+        />
         <div className={styles.wrapper}>
-          <h1>DeepWave Business Website</h1>
-          <Image
-            src={cover}
-            alt="DeepWave Business Website Cover"
-            layout="responsive"
-          />
           <p className={styles.intro}>
-            DeepWave dedicates to acoustic-related artificial intelligence
-            research and has applied solutions in music entertainment. To
-            attract new customers and grow its business, DeepWave decided to
-            build a company website.
+            DeepWave is dedicated to acoustic-related artificial intelligence
+            research and has applied its solutions in the field of music
+            entertainment. In order to attract new customers and expand its
+            business, DeepWave has made the decision to build a company website.
           </p>
           <div className={styles.divide}>
             <div>
-              <h3>My Role</h3>
+              <p className={styles.tit}>My Role</p>
               <br />
               <span> UI Designer &amp; Frontend Developer</span>
             </div>
             <div>
               <p>
-                I was responsible for designing and building the website to
-                present the technical features of DeepWave.
+                As a UI Designer and Frontend Developer, my primary
+                responsibility involved designing and developing the website to
+                effectively showcase the advanced technical features offered by
+                DeepWave.
               </p>
             </div>
           </div>
           <div className={styles.divide}>
             <div>
-              <h3>Implementation</h3>
+              <h3 className={styles.tit}>Implementation</h3>
               <br />
               <span> Designed and Built the static website</span>
             </div>
             <div>
               <p>
-                Design
-                <ul>
-                  <li>
-                    Designed all the UI of the business websites with Sketch,
-                    including Home page, About page, Tech page, Media page,
-                    Career page, News page, FAQ page, Terms and Condition page
-                    and Privacy Policy page.
-                  </li>
-                </ul>
-                Function
-                <p>
-                  The website was built with React because of its reusability
-                  and maintainability.
-                </p>
+                I designed the entire user interface (UI) for the business
+                website using Sketch. This encompassed creating layouts and
+                visuals for various pages, such as the Home, About, Tech, Media,
+                Career, News, FAQ, Terms and Conditions, and Privacy Policy
+                pages.
+              </p>
+              <br />
+              <p>
+                The website was developed using React, chosen for its excellent
+                reusability and maintainability characteristics.
               </p>
             </div>
           </div>
-          <Image src={page1} alt="page1" />
-          <div className={styles.alt}>Home page</div>
-
-          <Image src={page2} alt="page2" />
-          <div className={styles.alt}>Tech page, Media page, Career page</div>
+          <Image src={showcase} alt="showcase" />
         </div>
       </div>
+      <GoHome />
       <Footer />
     </>
   );

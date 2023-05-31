@@ -1,59 +1,74 @@
 /** @format */
+$color-text: #1e1e1e !default;
+$color-base: #1e1e1e !default;
+
+.h1 {
+  margin-bottom: 40px;
+  padding: 0 10rem;
+  font-family: "Inter", sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+}
+.fullimg {
+  width: 100%;
+  height: 700px;
+  object-position: 50% 30%;
+  object-fit: cover;
+}
 
 .wrapper {
-  padding-bottom: 4rem;
-  h1 {
-    text-align: center;
-    color: #0f110c;
-    margin-bottom: 40px;
-  }
+  padding: 2rem 10rem 4rem 10rem;
+  font-family: "Inter", sans-serif;
+  color: $color-base;
+
   .intro {
     padding-top: 4rem;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .tit {
+    font-weight: 600;
   }
   p {
-    color: #0f110c;
     font-size: 17px;
     line-height: 2em;
     font-weight: 400;
     letter-spacing: 0.5px;
-    max-width: 768px;
-    margin: 0 auto;
-    font-family: "Montserrat", sans-serif;
   }
   img {
     padding: 2rem 0 !important;
+    width: 100%;
+    height: auto;
   }
   .divide {
-    max-width: 768px;
-    margin: 0 auto;
     padding: 4rem 0 !important;
     display: flex;
+    justify-content: space-between;
 
     div {
-      width: 60%;
+      width: 40%;
       display: inline-block;
+
       &:first-child {
         width: 40%;
         margin-right: 50px;
       }
       h3 {
-        margin: 0;
+        margin-top: 0;
       }
       span {
         font-family: "Lora", serif;
         font-size: 30px;
-        color: #cecccc;
+        color: $color-text;
       }
     }
   }
   .alt {
     text-align: center;
-    color: #cecccc;
+    color: $color-text;
     padding-bottom: 6rem;
   }
   video {
-    max-width: 768px;
-    margin: 0 auto;
     display: flex;
     width: 100%;
   }
@@ -75,6 +90,9 @@
   }
 }
 
+.back {
+}
+
 //sovia
 .grid > div {
   width: 60px !important;
@@ -84,21 +102,48 @@
 }
 
 @media (max-width: 768px) {
+  .fullimg {
+    height: auto;
+    object-fit: scale-down;
+  }
+  .h1 {
+    padding: 2rem 1rem;
+    font-size: 30px;
+  }
   .wrapper {
-    div {
-      padding: 1rem 4rem;
-    }
-    .intro {
-      padding: 4rem;
+    padding: 2rem 1rem;
+    p {
+      margin-top: 1rem;
     }
     .divide {
       flex-direction: column;
+      padding: 2rem 0 !important;
       div {
         width: 100% !important;
+        margin-top: 40px;
+
+        &:first-child {
+          margin: 0;
+        }
       }
     }
   }
 }
 
 @media (max-width: 992px) {
+}
+
+.goback {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0 100px;
+  background: #fff;
+
+  span {
+    background: #f2efe6;
+    margin-bottom: 20px;
+    padding: 5px 15px;
+    color: #1e1e1e;
+    border-radius: 50px;
+  }
 }

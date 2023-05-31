@@ -2,14 +2,16 @@
 
 import React from "react";
 import Head from "next/head";
+import Script from "next/script";
 
 export default function head() {
   return (
     <Head>
-      <script
+      <Script
         async
-        src="https://www.googletagmanager.com/gtag/js?id=G-PCHR3125ZL"></script>
-      <script
+        src="https://www.googletagmanager.com/gtag/js?id=G-PCHR3125ZL"
+      />
+      <Script
         dangerouslySetInnerHTML={{
           __html: `
         window.dataLayer = window.dataLayer || []; 
@@ -19,20 +21,11 @@ export default function head() {
         `,
         }}
       />
-
-      <title>Yichen Zhao</title>
+      <link rel="icon" href="/favicon.ico" />
+      <title>Yi-Chen Zhao</title>
       <meta
         name="description"
-        content="Hello, I'm a frontend developer and UI/Graphic designer."
-      />
-      <link rel="icon" href="/favicon.ico" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Lora&family=Montserrat&display=swap"
-        rel="stylesheet"
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
-        rel="stylesheet"
+        content="Hello, I'm YiChen, a Frontend Developer and UI/ Graphic Designer. I enjoy creating user-centric, delightful, and human experiences."
       />
     </Head>
   );

@@ -35,3 +35,13 @@
     column-count: 1;
   }
 }
+
+.designSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0;
+  h1 {
+    font-weight: 400;
+  }
+}

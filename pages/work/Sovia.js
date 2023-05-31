@@ -1,27 +1,28 @@
 /** @format */
 import Navbar from "../../component/navbar";
+import GoHome from "../../component/goHome";
+import Footer from "../../component/footer";
 
 import styles from "../../styles/WorkItem.module.scss";
 import Image from "next/image";
 import cover from "../../public/Sovia/cover.jpg";
-import page1 from "../../public/Sovia/1.png";
-import font from "../../public/Sovia/font.png";
+import compare from "../../public/Sovia/compare.png";
 import logo from "../../public/Sovia/logo.png";
-import logo1 from "../../public/Sovia/logo1.jpg";
-import Footer from "../../component/footer";
 
 export default function Sovia() {
   return (
     <>
       <div className="container">
-        <Navbar text="#0F110C" position="relative" />
+        <Navbar text="#1e1e1e" position="relative" />
+        <h1 className={styles.h1}>Sovia</h1>
+        <Image src={cover} alt="Sovia Cover" className={styles.fullimg} />
         <div className={styles.wrapper}>
-          <h1>Sovia</h1>
-          <Image src={cover} alt="Sovia Cover" />
           <p className={styles.intro}>
-            Sovia is a singing voice separation system. It separates voice and
-            background music from a given youtube link or a audio file. It aims
-            to provide unprecedented singing and listening experience.
+            Sovia is an advanced singing voice separation system specifically
+            designed to separate vocals and background music from various
+            sources such as YouTube links or audio files. Its primary objective
+            is to deliver an unparalleled singing and listening experience by
+            extracting and isolating the vocals with exceptional precision.
           </p>
           <div className={styles.divide}>
             <div>
@@ -31,14 +32,17 @@ export default function Sovia() {
             </div>
             <div>
               <p>
-                In this project, I worked closely with Backend developer to
-                integrate APIs, bring AI solutions to the website. I aimed to
-                creating a user interface as simple and efficient as possible
-                for all age groups.
+                Throughout this project, I collaborated closely with the Backend
+                developer to seamlessly integrate APIs and incorporate AI
+                solutions into the website. My main objective was to create a
+                user interface that was both simple and efficient, catering to
+                users of all age groups. By focusing on usability and user
+                experience, I aimed to provide a seamless and enjoyable
+                interaction for all individuals accessing the website.
               </p>
             </div>
           </div>
-          <Image src={page1} alt="page1" />
+          <Image src={compare} alt="previous-version" />
           <div className={styles.divide}>
             <div>
               <h3>Implementation</h3>
@@ -49,62 +53,31 @@ export default function Sovia() {
             </div>
             <div>
               <p>
-                Design
-                <ul>
-                  <li>
-                    Optimized website&apos;s UI and UX for a better user
-                    experience.
-                  </li>
-                  <li>Customized exclusive logo.</li>
-                </ul>
-                Function
-                <ul>
-                  <li>
-                    Redesigned and revised the waveform open-source software to
-                    generate a more suitable waveform to the service.
-                  </li>
-                  <li>
-                    Returned the latest account balance everytime the page
-                    reloads.
-                  </li>
-                  <li>
-                    Checked the uploaded audio&apos;s format and size before
-                    sending to the backend.
-                  </li>
-                  <li>Stored and retrieved the audio by using localstorage</li>
-                  <li>Added permission to non-login users</li>
-                </ul>
+                I optimized the website&apos;s UI and UX, improving layout,
+                navigation, and visual elements. I created a unique logo to
+                represent the brand. Redesigned the waveform software for better
+                audio visualization. Displayed the latest account balance on
+                page reload. Implemented audio format and size checks for smooth
+                uploads. Utilized local storage for seamless audio access.
+                Enabled non-login user permissions for wider accessibility.
               </p>
             </div>
           </div>
           <div className={styles.divide}>
             <div>
-              <h3>Design</h3>
-              <br />
-              <span>Colors &amp; Typography</span>
-            </div>
-            <div className={styles.grid}>
-              <div style={{ background: "#0b89aa" }}></div>
-              <div style={{ background: "#5facd3" }}></div>
-              <div style={{ background: "#333e46" }}></div>
-              <div style={{ background: "#a2b4bf" }}></div>
-              <Image src={font} alt="font" />
-            </div>
-          </div>
-          <div className={styles.divide}>
-            <div>
-              <span>Logo</span>
+              <h3>Logo</h3>
             </div>
             <div>
-              <Image src={logo} alt="logo" />
-              <Image src={logo1} alt="logo1" />
+              <Image src={logo} alt="font" />
             </div>
           </div>
-          <video controls loop>
+
+          <video autoPlay loop muted>
             <source src="/Sovia/video.webm" type="video/webm" />
           </video>
         </div>
       </div>
+      <GoHome />
       <Footer />
     </>
   );
