@@ -14,14 +14,14 @@ export default function header() {
               creating user-centric, delightful, and human experiences.
             </span>
           </div>
-          <div className={styles.wrapper}>
+          {/* <div className={styles.wrapper}>
             <Image
               src={photo}
               className={styles.img}
               priority={true}
               alt="yichen"
             />
-          </div>
+          </div> */}
         </div>
       </main>
     </>

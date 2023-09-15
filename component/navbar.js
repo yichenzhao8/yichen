@@ -13,7 +13,7 @@ import yc2 from "../public/yichenlogo-02.png";
 const Navlinks = [
   { title: "Work", href: "#work", newPage: false },
   { title: "Design", href: "#design", newPage: false },
-  { title: "Resume", href: "yichenzhao-resume.pdf", newPage: true },
+  // { title: "Resume", href: "yichenzhao-resume.pdf", newPage: true },
 ];
 
 export default function Navbar(props) {
