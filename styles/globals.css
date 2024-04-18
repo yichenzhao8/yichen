@@ -1,16 +1,14 @@
 /** @format */
-@import url("https://fonts.googleapis.com/css2?family=Lora&family=Montserrat&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  font-family: --font-inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #f2efe6;
   scroll-behavior: smooth;
   position: relative;
+  height: 100%;
 }
 
 .container {
@@ -29,6 +27,9 @@ a {
 * {
   box-sizing: border-box;
   cursor: none !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 input[type="text"],

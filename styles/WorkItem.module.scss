@@ -1,149 +1,225 @@
 /** @format */
-$color-text: #1e1e1e !default;
-$color-base: #1e1e1e !default;
+@use "modules";
+@use "mixin";
 
-.h1 {
-  margin-bottom: 40px;
-  padding: 0 10rem;
-  font-family: "Inter", sans-serif;
-  font-size: 50px;
-  font-weight: 500;
-}
-.fullimg {
-  width: 100%;
-  height: 700px;
-  object-position: 50% 30%;
-  object-fit: cover;
+.title {
+  width: 60%;
+  padding: 80px 0;
+  font-weight: 300;
+  color: modules.$color-white;
+  @include mixin.extraSmallDevices {
+    font-size: 15vw;
+  }
+  @include mixin.smallDevices {
+    font-size: 15vw;
+  }
+  @include mixin.mediumDevices {
+    font-size: 80px;
+  }
+  @include mixin.largeDevices {
+    font-size: 100px;
+  }
 }
 
 .wrapper {
-  padding: 2rem 10rem 4rem 10rem;
-  font-family: "Inter", sans-serif;
-  color: $color-base;
+  @include mixin.rwd();
 
-  .intro {
-    padding-top: 4rem;
-    font-size: 22px;
-    font-weight: 500;
-  }
-  .tit {
-    font-weight: 600;
-  }
-  p {
-    font-size: 17px;
-    line-height: 2em;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-  }
-  img {
-    padding: 2rem 0 !important;
+  background-color: modules.$color-black;
+  position: relative;
+
+  .coverimg {
     width: 100%;
-    height: auto;
+    object-position: 50% 30%;
+    object-fit: cover;
+    @include mixin.extraSmallDevices {
+      height: 400px;
+    }
+    @include mixin.smallDevices {
+      height: 400px;
+    }
+    @include mixin.mediumDevices {
+      height: 600px;
+    }
+    @include mixin.largeDevices {
+      height: 800px;
+    }
   }
   .divide {
     padding: 4rem 0 !important;
-    display: flex;
-    justify-content: space-between;
+    color: modules.$color-white;
+    display: grid;
+    grid-gap: 50px;
+    @include mixin.extraSmallDevices {
+      grid-template-columns: 1fr;
+    }
+    @include mixin.smallDevices {
+      grid-template-columns: 1fr;
+    }
+    @include mixin.mediumDevices {
+      grid-template-columns: 1fr 2fr;
+    }
 
-    div {
-      width: 40%;
-      display: inline-block;
+    p {
+      font-weight: 300;
 
-      &:first-child {
-        width: 40%;
-        margin-right: 50px;
+      @include mixin.extraSmallDevices {
+        font-size: 22px;
+        line-height: 2rem;
       }
+      @include mixin.smallDevices {
+        font-size: 22px;
+        line-height: 2rem;
+      }
+      @include mixin.mediumDevices {
+        font-size: 32px;
+        line-height: 3.5rem;
+      }
+    }
+    .combineTitle {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+    }
+    .subTitle {
+      display: flex;
+      flex-direction: column;
       h3 {
         margin-top: 0;
+        color: modules.$color-gray;
+        font-size: 14px;
+        font-weight: 400;
       }
       span {
-        font-family: "Lora", serif;
-        font-size: 30px;
-        color: $color-text;
+        font-size: 20px;
+        padding-top: 10px;
+      }
+    }
+
+    ul {
+      padding-top: 40px;
+    }
+    li {
+      display: block;
+      counter-increment: items;
+      font-weight: 300;
+      @include mixin.extraSmallDevices {
+        font-size: 22px;
+        line-height: 2rem;
+      }
+      @include mixin.smallDevices {
+        font-size: 22px;
+        line-height: 2rem;
+      }
+      @include mixin.mediumDevices {
+        font-size: 32px;
+        line-height: 3.5rem;
+      }
+    }
+    li:before {
+      content: "0" counter(items);
+      color: modules.$color-gray;
+      vertical-align: text-bottom;
+      padding-right: 15px;
+      @include mixin.extraSmallDevices {
+        font-size: 16px;
+      }
+      @include mixin.smallDevices {
+        font-size: 16px;
+      }
+      @include mixin.mediumDevices {
+        font-size: 20px;
       }
     }
   }
-  .alt {
-    text-align: center;
-    color: $color-text;
-    padding-bottom: 6rem;
-  }
-  video {
-    display: flex;
+  .singleImage,
+  .gif {
     width: 100%;
-  }
-}
-.link {
-  padding: 6rem 0;
-  text-align: center;
-  padding-bottom: 80px;
-  h1 {
-    margin-bottom: 40px;
-    font-size: 32px;
-  }
-  a > h2 {
-    display: inline;
-    background-color: #0f110c;
-    color: #cecccc;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-  }
-}
-
-.back {
-}
-
-//sovia
-.grid > div {
-  width: 60px !important;
-  height: 60px !important;
-  display: inline-block;
-  margin-right: 20px;
-}
-
-@media (max-width: 768px) {
-  .fullimg {
     height: auto;
-    object-fit: scale-down;
   }
-  .h1 {
-    padding: 2rem 1rem;
-    font-size: 30px;
-  }
-  .wrapper {
-    padding: 2rem 1rem;
-    p {
-      margin-top: 1rem;
-    }
-    .divide {
-      flex-direction: column;
-      padding: 2rem 0 !important;
-      div {
-        width: 100% !important;
-        margin-top: 40px;
+}
 
-        &:first-child {
-          margin: 0;
+.imageSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.caseStudyContainer {
+  color: modules.$color-white;
+  padding: 100px 0;
+  h2 {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 3.5rem;
+  }
+  .content {
+    display: grid;
+
+    grid-gap: 20px;
+    padding: 50px 0 80px 0;
+
+    @include mixin.extraSmallDevices {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @include mixin.smallDevices {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @include mixin.mediumDevices {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mixin.largeDevices {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .link {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .box {
+        transition: all 0.5s ease-in-out;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        overflow: hidden;
+
+        @include mixin.extraSmallDevices {
+          height: 200px;
+        }
+        @include mixin.smallDevices {
+          height: 200px;
+        }
+        @include mixin.mediumDevices {
+          height: 350px;
         }
       }
+
+      .imageBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        transition: transform 0.3s;
+        object-fit: cover;
+      }
     }
-  }
-}
-
-@media (max-width: 992px) {
-}
-
-.goback {
-  display: flex;
-  justify-content: center;
-  padding: 40px 0 100px;
-  background: #fff;
-
-  span {
-    background: #f2efe6;
-    margin-bottom: 20px;
-    padding: 5px 15px;
-    color: #1e1e1e;
-    border-radius: 50px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: 400;
+    }
   }
 }

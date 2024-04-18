@@ -1,35 +1,91 @@
 /** @format */
+@use "modules";
+@use "mixin";
+
 .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 2rem 10rem;
-  position: absolute;
-  width: 100%;
   align-items: center;
-  ul {
-    margin: 0;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px modules.$color-gray solid;
+  height: modules.$xxl-pad-inner;
+  background-color: modules.$color-black;
+
+  // @include mixin.rwd();
+  .link {
+    border-right: 1px solid modules.$color-gray;
+  }
+  .link,
+  .openToWork {
+    height: 100%;
     display: flex;
-    list-style: none;
-    color: #f2efe6;
-    li {
-      list-style: none;
-      cursor: pointer;
-      h4 {
-        margin: 0 10px;
-        display: inline-block;
-        font-weight: 400;
-      }
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    padding: 0 modules.$sm-pad-inner;
+
+    > div {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      width: auto;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h4 {
+      font-size: modules.$text-size-xsmall;
+      color: modules.$color-white;
+      font-weight: modules.$font-body-light-weight;
+      text-transform: uppercase;
     }
   }
 }
 
-.logo {
-  width: 80px;
-  height: 80px;
+.brandWrapper {
+  width: modules.$xxl-pad-inner;
+  height: modules.$xxl-pad-inner;
+  min-height: 4rem;
+  min-width: 4rem;
+  grid-column-gap: 0rem;
+  grid-row-gap: 0rem;
+  aspect-ratio: auto;
+  border-right: 1px solid modules.$color-gray;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
 }
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 2rem 1rem;
+
+.toRight {
+  display: flex;
+  height: 100%;
+}
+
+.openToWork {
+  div {
+    flex-direction: row !important;
+    .innerCircle {
+      width: 5px;
+      height: 5px;
+      background-color: modules.$color-lime;
+      border-radius: 50%;
+      margin-right: 6px;
+      .box {
+        width: 5px;
+        height: 5px;
+        background-color: modules.$color-lime;
+        border-radius: 50%;
+        position: relative;
+        opacity: 0.5;
+      }
+    }
   }
 }

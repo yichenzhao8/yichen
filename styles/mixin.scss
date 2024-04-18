@@ -1,0 +1,119 @@
+/** @format */
+@use "modules";
+
+@mixin theme($theme: DarkGray) {
+  background: $theme;
+  box-shadow: 0 0 1px rgba($theme, 0.25);
+  color: #fff;
+}
+
+@mixin center() {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin largeTitle() {
+  line-height: 1em;
+  font-weight: 300;
+  z-index: 999;
+  color: modules.$color-white;
+  text-align: center;
+  justify-content: center;
+
+  @include extraSmallDevices {
+    font-size: 15vw;
+    .and {
+      font-size: 10vw;
+    }
+  }
+  @include smallDevices {
+    font-size: 15vw;
+    .and {
+      font-size: 10vw;
+    }
+  }
+  @include mediumDevices {
+    font-size: 15vw;
+    .and {
+      font-size: 10vw;
+    }
+  }
+  @include largeDevices {
+    font-size: 7vw;
+    .and {
+      font-size: 5vw;
+    }
+  }
+}
+
+@mixin title() {
+  width: 100%;
+  @include largeDevices() {
+    width: 50%;
+  }
+
+  span {
+    border-bottom: 1px solid modules.$color-gray;
+    color: modules.$color-gray;
+    display: block;
+    margin-top: modules.$xxl-pad-inner;
+    padding-bottom: 10px;
+    width: 60%;
+  }
+  p {
+    margin-top: 30px;
+    font-size: modules.$text-size-lg;
+    font-weight: 500;
+    margin-bottom: 100px;
+  }
+}
+
+$breakpoint-xl: 1200px;
+$breakpoint-md: 992px;
+$breakpoint-sm: 768px;
+$breakpoint-xs: 600px;
+
+@mixin extraSmallDevices() {
+  @media (max-width: $breakpoint-xs) {
+    @content;
+  }
+}
+@mixin smallDevices() {
+  @media (min-width: $breakpoint-xs) {
+    @content;
+  }
+}
+@mixin mediumDevices() {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+@mixin largeDevices() {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+@mixin extraLargeDevices() {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin rwd() {
+  padding: modules.$sm-pad-inner modules.$xl-pad-inner;
+  @include extraSmallDevices() {
+    padding: 0 modules.$sm-pad-inner;
+  }
+  @include smallDevices() {
+    padding: 0 modules.$sm-pad-inner;
+  }
+  @include mediumDevices() {
+    padding: modules.$sm-pad-inner modules.$sm-pad-inner;
+  }
+  @include largeDevices() {
+    padding: modules.$sm-pad-inner modules.$md-pad-inner;
+  }
+  @include extraLargeDevices() {
+    padding: modules.$sm-pad-inner modules.$xxl-pad-inner;
+  }
+}

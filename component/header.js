@@ -1,28 +1,35 @@
 /** @format */
-import Image from "next/image";
+import { useContext, useCallback } from "react";
+import { CursorContext } from "../component/cursor/CursorContextProvider";
 import styles from "../styles/Header.module.scss";
-import photo from "../public/images/yichen.jpg";
+import { inter, varela } from "../assets/font";
+import Intro from "./intro/intro";
 
 export default function header() {
+  const [cursor, setCursor] = useContext(CursorContext);
+  const activeCursor = useCallback(() => {
+    setCursor({ ...cursor, mode: true });
+  });
+  const inactiveCursor = useCallback(() => {
+    setCursor({ ...cursor, mode: false });
+  });
   return (
     <>
-      <main className={`${styles.main} main`}>
+      <main
+        className={`${styles.main} main`}
+        onMouseEnter={activeCursor}
+        onMouseLeave={inactiveCursor}
+        onClick={inactiveCursor}>
         <div className={styles.section}>
-          <div className={`${styles.text} intro`}>
-            <span>
-              I'm YiChen, a Frontend Developer and UI/ Graphic Designer. I enjoy
-              creating user-centric, delightful, and human experiences.
-            </span>
-          </div>
-          {/* <div className={styles.wrapper}>
-            <Image
-              src={photo}
-              className={styles.img}
-              priority={true}
-              alt="yichen"
-            />
-          </div> */}
+          <span className={`${inter.className} ${styles.title}`}>
+            Website <br />
+            Developer
+            <span className={`${varela.className} ${styles.and}`}>&</span>
+            <br />
+            Designer
+          </span>
         </div>
+        <Intro />
       </main>
     </>
   );

@@ -1,9 +1,5 @@
 /** @format */
 
-.container {
-  padding: 4rem 10rem;
-}
-
 .footer {
   display: flex;
   flex: 1;
@@ -30,6 +26,6 @@
 
 @media (max-width: 992px) {
   .container {
-    padding: 4rem;
+    padding: 1rem;
   }
 }

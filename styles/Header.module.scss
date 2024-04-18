@@ -1,131 +1,48 @@
 /** @format */
+@use "modules";
+@use "mixin";
 
 .main {
-  background-color: #1e1e1e;
+  background-color: modules.$color-black;
   flex: 1;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  color: #f2efe6;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: modules.$color-white;
   align-items: center;
-  padding: 4rem 10rem;
+  padding: 4rem 4rem;
   height: 100vh;
   min-height: 900px;
+  text-align: center;
+  z-index: -9;
 
   .section {
-    display: flex;
-    flex-direction: row;
     align-items: center;
     width: 100%;
-    justify-content: center;
-    .text {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      top: 70%;
-      z-index: 99;
-      width: 60%;
-      text-align: center;
-
-      span {
-        line-height: 3.5rem;
-        font-size: 2.5rem;
-        font-weight: 300;
-      }
-    }
-  }
-
-  .wrapper {
-    display: flex;
     position: relative;
-    height: fit-content;
-    background: #f2efe6;
-    border-radius: 10px;
-    .img {
-      position: relative;
-      width: auto;
-      height: auto;
-      mix-blend-mode: multiply;
-      border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+
+    .title {
+      @include mixin.largeTitle();
     }
   }
-}
-
-.title {
-  margin: 0;
-  line-height: 6rem;
-  font-size: 6rem;
-  color: #d8b0c9;
-  font-family: "Poppins", sans-serif;
-}
-
-.highligh {
-  color: #d8b0c9;
-}
-
-@media (min-width: 992px) and (max-width: 1200px) {
-  .main {
-    .section {
-      .text {
-        span {
-          padding: 0 20px 0 0;
-          font-size: 1.77778rem;
-        }
-      }
+  .intro {
+    display: block;
+    line-height: 160%;
+    font-size: modules.$text-size-small;
+    @include mixin.extraSmallDevices {
+      width: 100%;
     }
-    .wrapper {
-      .img {
-        width: 300px;
-      }
+    @include mixin.smallDevices {
+      width: 100%;
     }
-  }
-}
-
-@media (max-width: 992px) {
-  .main {
-    padding: 4rem 4rem 0;
-    text-align: center;
-    .section {
-      flex-direction: column;
-      align-items: center;
-      .text {
-        order: 2;
-        padding-top: 2rem;
-        width: 100%;
-
-        span {
-          font-size: 1.77778rem;
-          font-weight: 500;
-          line-height: 2.333rem;
-        }
-      }
+    @include mixin.mediumDevices {
+      width: 100%;
     }
-
-    .wrapper {
-      order: 1;
-      .img {
-        width: 300px;
-        height: auto;
-      }
-    }
-  }
-}
-
-@media (max-width: 600px) {
-  .main {
-    padding: 6rem 4rem 0;
-    .section {
-      .text {
-        span {
-          font-size: 1.4rem;
-        }
-      }
-    }
-    .wrapper {
-      .img {
-        width: 250px;
-        height: auto;
-      }
+    @include mixin.largeDevices {
+      width: 40%;
     }
   }
 }
