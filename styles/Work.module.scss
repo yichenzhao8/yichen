@@ -17,9 +17,6 @@
   .containerWrapper {
     display: block;
   }
-  @include mixin.extraSmallDevices() {
-    width: calc(100% / 12 * 12);
-  }
   @include mixin.smallDevices() {
     width: calc(100% / 12 * 12);
   }
@@ -79,11 +76,8 @@
   width: 100%;
   overflow: hidden;
 
-  @include mixin.extraSmallDevices {
-    height: 200px;
-  }
   @include mixin.smallDevices {
-    height: 300px;
+    height: 250px;
   }
   @include mixin.mediumDevices {
     height: 450px;
@@ -131,9 +125,6 @@
   span {
     color: modules.$color-gray;
     font-size: modules.$text-size-small;
-  }
-  @include mixin.extraSmallDevices {
-    flex-direction: column;
   }
   @include mixin.smallDevices {
     flex-direction: column;

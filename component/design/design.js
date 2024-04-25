@@ -13,7 +13,7 @@ const projects = [
   },
   {
     title: "Mobile app design",
-    src: "MobileDesign",
+    src: "mobileDesign",
     color: "#8C8C8C",
   },
   {

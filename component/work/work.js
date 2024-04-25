@@ -65,21 +65,6 @@ export default function Work() {
                 SELECTED PROJECT - SELECTED PROJECT - SELECTED PROJECT -
                 SELECTED PROJECT - SELECTED PROJECT -
               </span>
-              <span>
-                SELECTED PROJECT - SELECTED PROJECT - SELECTED PROJECT -
-                SELECTED PROJECT - SELECTED PROJECT - SELECTED PROJECT -
-                SELECTED PROJECT - SELECTED PROJECT -
-              </span>
-              <span>
-                SELECTED PROJECT - SELECTED PROJECT - SELECTED PROJECT -
-                SELECTED PROJECT - SELECTED PROJECT - SELECTED PROJECT -
-                SELECTED PROJECT - SELECTED PROJECT -
-              </span>
-              <span>
-                SELECTED PROJECT - SELECTED PROJECT - SELECTED PROJECT -
-                SELECTED PROJECT - SELECTED PROJECT - SELECTED PROJECT -
-                SELECTED PROJECT - SELECTED PROJECT -
-              </span>
             </div>
           </div>
         </div> */}
@@ -104,7 +89,7 @@ export default function Work() {
                 <div className={styles.description}>
                   <p>{item.title}</p>
                   {item.tags.map((i) => {
-                    return <span>{i}</span>;
+                    return <span key={i}>{i}</span>;
                   })}
                 </div>
               </Link>

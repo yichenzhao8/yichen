@@ -32,9 +32,7 @@
     display: block;
     line-height: 160%;
     font-size: modules.$text-size-small;
-    @include mixin.extraSmallDevices {
-      width: 100%;
-    }
+
     @include mixin.smallDevices {
       width: 100%;
     }

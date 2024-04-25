@@ -15,17 +15,11 @@
 @mixin largeTitle() {
   line-height: 1em;
   font-weight: 300;
-  z-index: 999;
+
   color: modules.$color-white;
   text-align: center;
   justify-content: center;
 
-  @include extraSmallDevices {
-    font-size: 15vw;
-    .and {
-      font-size: 10vw;
-    }
-  }
   @include smallDevices {
     font-size: 15vw;
     .and {
@@ -73,13 +67,8 @@ $breakpoint-md: 992px;
 $breakpoint-sm: 768px;
 $breakpoint-xs: 600px;
 
-@mixin extraSmallDevices() {
-  @media (max-width: $breakpoint-xs) {
-    @content;
-  }
-}
 @mixin smallDevices() {
-  @media (min-width: $breakpoint-xs) {
+  @media (max-width: $breakpoint-xs) {
     @content;
   }
 }
@@ -101,9 +90,6 @@ $breakpoint-xs: 600px;
 
 @mixin rwd() {
   padding: modules.$sm-pad-inner modules.$xl-pad-inner;
-  @include extraSmallDevices() {
-    padding: 0 modules.$sm-pad-inner;
-  }
   @include smallDevices() {
     padding: 0 modules.$sm-pad-inner;
   }

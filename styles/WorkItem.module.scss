@@ -7,9 +7,6 @@
   padding: 80px 0;
   font-weight: 300;
   color: modules.$color-white;
-  @include mixin.extraSmallDevices {
-    font-size: 15vw;
-  }
   @include mixin.smallDevices {
     font-size: 15vw;
   }
@@ -31,9 +28,6 @@
     width: 100%;
     object-position: 50% 30%;
     object-fit: cover;
-    @include mixin.extraSmallDevices {
-      height: 400px;
-    }
     @include mixin.smallDevices {
       height: 400px;
     }
@@ -49,9 +43,6 @@
     color: modules.$color-white;
     display: grid;
     grid-gap: 50px;
-    @include mixin.extraSmallDevices {
-      grid-template-columns: 1fr;
-    }
     @include mixin.smallDevices {
       grid-template-columns: 1fr;
     }
@@ -62,10 +53,6 @@
     p {
       font-weight: 300;
 
-      @include mixin.extraSmallDevices {
-        font-size: 22px;
-        line-height: 2rem;
-      }
       @include mixin.smallDevices {
         font-size: 22px;
         line-height: 2rem;
@@ -102,10 +89,6 @@
       display: block;
       counter-increment: items;
       font-weight: 300;
-      @include mixin.extraSmallDevices {
-        font-size: 22px;
-        line-height: 2rem;
-      }
       @include mixin.smallDevices {
         font-size: 22px;
         line-height: 2rem;
@@ -120,9 +103,6 @@
       color: modules.$color-gray;
       vertical-align: text-bottom;
       padding-right: 15px;
-      @include mixin.extraSmallDevices {
-        font-size: 16px;
-      }
       @include mixin.smallDevices {
         font-size: 16px;
       }
@@ -163,9 +143,6 @@
     grid-gap: 20px;
     padding: 50px 0 80px 0;
 
-    @include mixin.extraSmallDevices {
-      grid-template-columns: repeat(1, 1fr);
-    }
     @include mixin.smallDevices {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -190,9 +167,6 @@
         width: 100%;
         overflow: hidden;
 
-        @include mixin.extraSmallDevices {
-          height: 200px;
-        }
         @include mixin.smallDevices {
           height: 200px;
         }

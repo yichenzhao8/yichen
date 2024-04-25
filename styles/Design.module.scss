@@ -1,71 +1,24 @@
 /** @format */
 
-// /** @format */
-
-// .gallery {
-//   -webkit-column-count: 5;
-//   -webkit-column-gap: 10px;
-//   -moz-column-count: 5;
-//   -moz-column-gap: 10px;
-//   column-count: 5;
-//   column-gap: 10px;
-
-//   img {
-//     width: 100% !important;
-//     height: auto !important;
-//     margin-bottom: 15px !important;
-//     opacity: 1;
-//     border-radius: 15px;
-//     &:hover {
-//       opacity: 1;
-//       transition: all 0.5s ease-in-out;
-//     }
-//   }
-// }
-
-// @media (max-width: 992px) {
-//   .gallery {
-//     -webkit-column-count: 2;
-//     -moz-column-count: 2;
-//     column-count: 2;
-//   }
-// }
-
-// @media (max-width: 600px) {
-//   .gallery {
-//     -webkit-column-count: 1;
-//     -moz-column-count: 1;
-//     column-count: 1;
-//   }
-// }
-
-// .designSection {
-//   position: relative;
-//   display: flex;
-//   flex-direction: column;
-//   padding: 100px 0;
-//   h1 {
-//     color: #4f4f4f;
-//     font-size: 30px;
-//     font-weight: 500;
-//     margin-bottom: 2rem;
-//   }
-// }
-
 @use "modules";
 @use "mixin";
 
 .modalContainer {
-  height: 400px;
-  width: 400px;
-  position: absolute;
-  background-color: white;
-  overflow: hidden;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: -9;
+  @include mixin.smallDevices {
+    display: none;
+  }
+  @include mixin.mediumDevices {
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    background-color: white;
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -9;
+  }
 }
 
 .modalSlider {
@@ -91,14 +44,10 @@
 .project {
   display: flex;
   width: 100%;
-
   border-top: 1px solid modules.$color-black;
   cursor: pointer;
   transition: all 0.2s;
 
-  @include mixin.extraSmallDevices {
-    padding: 20px 0px;
-  }
   @include mixin.smallDevices {
     padding: 20px 0px;
   }
@@ -152,9 +101,6 @@
 
       flex-direction: column;
 
-      @include mixin.extraSmallDevices {
-        border: none;
-      }
       @include mixin.smallDevices {
         border: none;
       }
